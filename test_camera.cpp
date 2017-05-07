@@ -25,7 +25,7 @@ int main() {
 
 
 	//display_picture(50, 500000);
-	printf("%d\n", pix);
+	//printf("%d\n", pix);
 	
 	sleep1(0,500000);	
 	return 0;
