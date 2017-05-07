@@ -21,7 +21,7 @@ int main() {
 	
 
 	// get line of pixels
-	for (int _i = 0; _i < CAMERA_WIDTH, _i ++){
+	for (int _i = 0; _i < CAMERA_WIDTH; _i ++){
 		char pix = get_pixel( 160, 120, 3);
 		cameraLine[ _i ] = pix;	
 	}
