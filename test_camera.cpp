@@ -8,24 +8,19 @@
 
 int main() {
 	init();
-	take_picture();
-	
-
-	
-	int cameraWidth = 320;
-	int cameraHeight = 240;
+	take_picture();	
 
 	int cameraLine1White[ CAMERA_WIDTH ]; //where 1 is white, 0 is black
 	//int cameraLine1Red[ CAMERA_WIDTH ]; 
 	
 	// get line of pixels
-	for (int _i = 0; _i < CAMERA_WIDTH; _i ++){
+	for (int _i = 0; _i < CAMERA_WIDTH-1; _i ++){
 		char pix = get_pixel( _i, 120, 3);
-		printf("\n%d",pix);	
+		printf("%d\n",pix);	
 		// convert values to 1's and 0s 
 		if (pix >= WHITE_TOLERANCE) {
 			cameraLine1White[_i] = 1;
-			printf("One!!");	
+			printf("One!!\n");	
 		}
 		else {
 			cameraLine1White[_i] = 0;
@@ -36,6 +31,7 @@ int main() {
 
 	//display_picture(50, 500000);
 	// Print out entire line (debugging)
+	printf("done reading, printing out all lines...");
 	for (int _i = 0; _i < CAMERA_WIDTH; _i ++) {
 		printf("%d\n", cameraLine1White[_i] );
 	}
