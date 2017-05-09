@@ -15,7 +15,7 @@ int main() {
 	
 	// get line of pixels
 	for (int _i = 0; _i < CAMERA_WIDTH-1; _i ++){
-		char pix = get_pixel( _i, 120, 3);
+		char pix = get_pixel( CAMERA_HEIGHT/2 , _i, 3);
 		printf("%d\n",pix);	
 		// convert values to 1's and 0s 
 		if (pix >= WHITE_TOLERANCE) {
