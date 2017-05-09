@@ -18,10 +18,8 @@ int main() {
 	int cameraLine1White[ CAMERA_WIDTH ]; //where 1 is white, 0 is black
 	//int cameraLine1Red[ CAMERA_WIDTH ]; 
 	
-	
-
-	// get line of pixels at y=120
-	for (int _i = 0; _i < CAMERA_WIDTH, _i ++){
+	// get line of pixels
+	for (int _i = 0; _i < CAMERA_WIDTH; _i ++){
 		char pix = get_pixel( 160, 120, 3);
 		
 		// convert values to 1's and 0s 
