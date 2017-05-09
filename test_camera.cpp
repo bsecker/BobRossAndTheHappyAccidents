@@ -7,8 +7,8 @@
 
 
 int main() {
-	//init();
-	//take_picture();
+	init();
+	take_picture();
 	
 
 	
