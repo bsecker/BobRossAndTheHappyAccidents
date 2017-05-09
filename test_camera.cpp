@@ -35,8 +35,8 @@ int main() {
 
 	//display_picture(50, 500000);
 	// Print out entire line (debugging)
-	for (int _i = 0; _i < CAMERA_WIDTH, _i ++) {
-		printf("%d\n", cameraLine[_i] );
+	for (int _i = 0; _i < CAMERA_WIDTH; _i ++) {
+		printf("%d\n", cameraLine1White[_i] );
 	}
 
 		
@@ -44,7 +44,7 @@ int main() {
 	return 0;
 }
 
-int get_error(int[] linePoints) { //unsure on argument syntax for passing in arrays
+int get_error(int linePoints[]) { //unsure on argument syntax for passing in arrays
 	/* With linePoints input, find error value TODO*/
 	int error = 0;
 	int whitePixels = 0;
@@ -74,7 +74,7 @@ int get_error(int[] linePoints) { //unsure on argument syntax for passing in arr
 
 
 
-}
+
 
 
 
