@@ -3,7 +3,7 @@
 #include "E101.h"
 #include "constants.h"
 
-// !TODO once this works, put into main program
+// TODO once this works, put into main program
 
 
 int main() {
@@ -63,9 +63,6 @@ int get_error(int linePoints[]) {
     // TODO: properly handling exceptions (if no white pixels)
 
 }
-
-
-
 
 
 

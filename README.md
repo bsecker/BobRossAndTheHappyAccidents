@@ -12,7 +12,22 @@
 AVC Plan - https://docs.google.com/document/d/1ohWP7eW6QpgYz0TD7oAWesx7KC22hXZOzdn1T1iDFE0/edit?usp=sharing
 
 
-## Week One Checklist
-Ben: research PID control
+## Progress Summary
+###  Week One
+Ben:
+ - Github Repo Made
+ - RPi SSH and auto pull/build script made (not finished)
+ - Test scripts made for camera and motors
+Keanu:
 
+Daniel:
+ - CAD designing and building prototype robot
 
+Matt:
+ - CAD designing and building battery holder for robot
+
+### Week Two
+Ben:
+ - Quadrant one and two completed ( TODO)
+
+(guys please update this so its not a pain in the ass when we get around to writing the progress report)
