@@ -53,7 +53,7 @@ int get_error(int linePoints[]) { //unsure on argument syntax for passing in arr
 	// iterate through data and calculate error	
 	for (int _i = 0; _i < CAMERA_WIDTH; _i++) {
 		if (linePoints[_i] == 1) {
-			error += (i - (CAMERA_WIDTH/2));
+			error += (_i - (CAMERA_WIDTH/2));
 			whitePixels ++;
 		}
 	}
