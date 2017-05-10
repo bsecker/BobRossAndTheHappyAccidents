@@ -23,10 +23,18 @@ int main() {
 
     set_motors(error);
 
+    sleep1(5,0);
+    stop_motors();
+
 
 	// Main game loop. Will run until finished maze
 	while (finished_maze == false) {
         finished_maze = true; // quit straight away for now
 	}
+
+
+    // cleanup
+    stop_motors();
+    stop();
 	return 0;
 }

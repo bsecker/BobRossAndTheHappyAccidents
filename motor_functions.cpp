@@ -32,3 +32,8 @@ void set_motors(int error) {
     set_motor(1, MOTOR_SPEED + error);
     set_motor(2, MOTOR_SPEED - error);
 }
+
+void stop_motors() {
+    set_motor(1, 0);
+    set_motor(2, 0);
+}
