@@ -28,4 +28,7 @@ void turnright( int duration, int speed) {
     set_motor(2, 0);
 }
 
-
+void set_motors(int error) {
+    set_motor(1, MOTOR_SPEED + error);
+    set_motor(2, MOTOR_SPEED - error);
+}
