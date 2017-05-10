@@ -24,6 +24,10 @@ int main() {
     set_motors(error);
 
     sleep1(5,0);
+    set_motor(1, -100);
+    sleep1(1,0);
+    set_motor(2, -100);
+    sleep1(1,0);
     stop_motors();
 
 
