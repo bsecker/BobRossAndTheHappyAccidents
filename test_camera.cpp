@@ -6,6 +6,31 @@
 // TODO once this works, put into main program
 
 
+
+int get_error(int linePoints[]) {
+    /* With linePoints input, find error value */
+    int error = 0;
+    int whitePixels = 0;
+    int actual_error = 0;
+
+    // iterate through data and calculate error
+    for (int _i = 0; _i < CAMERA_WIDTH; _i++) {
+        if (linePoints[_i] == 1) {
+            error += (_i - (CAMERA_WIDTH / 2));
+            whitePixels++;
+        }
+    }
+    // if no white, dont do anything
+    if (whitePixels > 0) {
+        actual_error = error / whitePixels;
+        return actual_error;
+    }
+    return 0;
+    // TODO: properly handling exceptions (if no white pixels)
+
+}
+
+
 int main() {
     init();
     take_picture();
@@ -40,29 +65,6 @@ int main() {
 
     sleep1(0, 500000);
     return 0;
-}
-
-int get_error(int linePoints[]) {
-    /* With linePoints input, find error value */
-    int error = 0;
-    int whitePixels = 0;
-    int actual_error = 0;
-
-    // iterate through data and calculate error
-    for (int _i = 0; _i < CAMERA_WIDTH; _i++) {
-        if (linePoints[_i] == 1) {
-            error += (_i - (CAMERA_WIDTH / 2));
-            whitePixels++;
-        }
-    }
-    // if no white, dont do anything
-    if (whitePixels > 0) {
-        actual_error = error / whitePixels;
-        return actual_error;
-    }
-    return 0;
-    // TODO: properly handling exceptions (if no white pixels)
-
 }
 
 
