@@ -11,7 +11,9 @@
 int main() {
     init();
 
-    
+    int cameraLine1White[CAMERA_WIDTH]; //where 1 is white, 0 is black
+
+    get_picture(&cameraLineWhite);
 
 
 	// Main game loop. Will run until finished maze

@@ -30,10 +30,8 @@ int get_error(int linePoints[]) {
 
 }
 
-int get_picture() {
+void get_picture(int *cameraLine1White) {
     take_picture();
-
-    int cameraLine1White[CAMERA_WIDTH]; //where 1 is white, 0 is black
 
     // get line of pixels
     for (int _i = 0; _i < CAMERA_WIDTH - 1; _i++) {
@@ -54,13 +52,6 @@ int get_picture() {
     for (int _i = 0; _i < CAMERA_WIDTH; _i++) {
         printf("%d\n", cameraLine1White[_i]);
     }
-
-    return cameraLine1White;
-}
-
-
-int main() {
-    return 0;
 }
 
 
