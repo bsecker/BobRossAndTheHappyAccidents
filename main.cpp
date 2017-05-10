@@ -18,7 +18,7 @@ int main() {
 
     get_picture(cameraLine1White);
 
-    int error = get_error(cameraLine1White)
+    int error = get_error(cameraLine1White);
     printf("Error: %d\n", error);
 
     set_motors(error);
@@ -35,6 +35,5 @@ int main() {
 
     // cleanup
     stop_motors();
-    stop();
 	return 0;
 }
