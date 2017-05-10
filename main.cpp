@@ -3,7 +3,7 @@
 #include "E101.h"
 
 #include "camera_functions.cpp"
-#include "motor_functions.cpp"
+//#include "motor_functions.cpp"
 #include "constants.h"
 
 // Main file for running Robot program.
