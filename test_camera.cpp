@@ -29,13 +29,14 @@ int main() {
     }
 
 
-    //display_picture(50, 500000);
+    display_picture(5, 0);
     // Print out entire line (debugging)
     printf("done reading, printing out all lines...");
     for (int _i = 0; _i < CAMERA_WIDTH; _i++) {
         printf("%d\n", cameraLine1White[_i]);
     }
 
+    printf("error: %d \n", get_error(cameraLine1White));
 
     sleep1(0, 500000);
     return 0;
