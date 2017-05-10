@@ -34,6 +34,6 @@ int main() {
 
 
     // cleanup
-    stop_motors();
+//    stop_motors();
 	return 0;
 }

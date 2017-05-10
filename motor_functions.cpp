@@ -36,4 +36,5 @@ void set_motors(int error) {
 void stop_motors() {
     set_motor(1, 0);
     set_motor(2, 0);
+    printf("stopped motors!");
 }
