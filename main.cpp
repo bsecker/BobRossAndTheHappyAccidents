@@ -18,6 +18,8 @@ int main() {
 
     get_picture(cameraLine1White);
 
+    printf("Error: %d\n", get_error(cameraLine1White));
+
 
 	// Main game loop. Will run until finished maze
 	while (finished_maze == false) {
