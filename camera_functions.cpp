@@ -3,10 +3,6 @@
 #include "E101.h"
 #include "constants.h"
 
-// TODO once this works, put into main program
-
-
-
 int get_error(int linePoints[]) {
     /* With linePoints input, find error value */
     int error = 0;
@@ -25,14 +21,16 @@ int get_error(int linePoints[]) {
         actual_error = error / whitePixels;
         return actual_error;
     }
+
+    // return 0 if no white pixels.
+    // (In theory, if the line is perfectly in the middle there is no error, so whatevers calling this function
+    // wont know whether the error returned is perfect or no white at all. However because we are taking a picture
+    // of the entire row (using all the pixels) we can be very certain that we will never get a perfectly centered line.
     return 0;
-    // TODO: properly handling exceptions (if no white pixels)
 
 }
 
-
-int main() {
-    init();
+int get_picture() {
     take_picture();
 
     int cameraLine1White[CAMERA_WIDTH]; //where 1 is white, 0 is black
@@ -50,25 +48,20 @@ int main() {
         } else {
             cameraLine1White[_i] = 0;
         }
-
     }
-
-
-    display_picture(5, 0);
     // Print out entire line (debugging)
     printf("done reading, printing out all lines...");
     for (int _i = 0; _i < CAMERA_WIDTH; _i++) {
         printf("%d\n", cameraLine1White[_i]);
     }
 
-    printf("error: %d \n", get_error(cameraLine1White));
-
-    sleep1(0, 500000);
-    return 0;
+    return cameraLine1White;
 }
 
 
-
+int main() {
+    return 0;
+}
 
 
 
