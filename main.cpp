@@ -11,16 +11,17 @@
 int main() {
     init();
 
+    //
     bool finished_maze = false;
 
     int cameraLine1White[CAMERA_WIDTH]; //where 1 is white, 0 is black
 
-    get_picture(&cameraLine1White);
+    get_picture(cameraLine1White);
 
 
 	// Main game loop. Will run until finished maze
 	while (finished_maze == false) {
-		;		
+        ;
 	}
 	return 0;
 }
