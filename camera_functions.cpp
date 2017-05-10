@@ -37,7 +37,7 @@ void get_picture(int *cameraLine1White) {
     display_picture(5, 0);
 
     // get line of pixels
-    for (int _i = 0; _i < CAMERA_WIDTH - 1; _i++) {
+    for (int _i = 0; _i < CAMERA_WIDTH; _i++) {
 
         char pix = get_pixel(CAMERA_HEIGHT / 2, _i, 3);
         printf("%d\n", pix);
@@ -45,7 +45,6 @@ void get_picture(int *cameraLine1White) {
         // convert values to 1's and 0s
         if (pix >= WHITE_TOLERANCE) {
             cameraLine1White[_i] = 1;
-            printf("One!!\n");
         } else {
             cameraLine1White[_i] = 0;
         }

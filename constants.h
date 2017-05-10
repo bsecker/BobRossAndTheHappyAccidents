@@ -12,4 +12,4 @@ const int WHITE_TOLERANCE = 128;
 const char SERVER_ADDRESS[16] = "130.128.150.128";
 
 // Robot
-const int MOTOR_SPEED = 128;
+const int MOTOR_SPEED = 50;
