@@ -18,7 +18,10 @@ int main() {
 
     get_picture(cameraLine1White);
 
-    printf("Error: %d\n", get_error(cameraLine1White));
+    int error = get_error(cameraLine1White)
+    printf("Error: %d\n", error);
+
+    set_motors(error);
 
 
 	// Main game loop. Will run until finished maze
