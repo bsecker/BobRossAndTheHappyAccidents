@@ -29,8 +29,3 @@ void turnright( int duration, int speed) {
 }
 
 
-int main() {
-	init();
-	turnleft(500000, 255);
-	return 0;
-}
