@@ -11,7 +11,7 @@
 int main() {
     init();
 
-    //
+    // track completion of the maze
     bool finished_maze = false;
 
     int cameraLine1White[CAMERA_WIDTH]; //where 1 is white, 0 is black
@@ -21,7 +21,7 @@ int main() {
 
 	// Main game loop. Will run until finished maze
 	while (finished_maze == false) {
-        ;
+        finished_maze = true; // quit straight away for now
 	}
 	return 0;
 }

@@ -33,6 +33,9 @@ int get_error(int linePoints[]) {
 void get_picture(int *cameraLine1White) {
     take_picture();
 
+    // debugging: display picture
+    display_picture(5);
+
     // get line of pixels
     for (int _i = 0; _i < CAMERA_WIDTH - 1; _i++) {
 
