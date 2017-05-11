@@ -34,7 +34,7 @@ void get_picture(int *cameraLine1White) {
     take_picture();
 
     // debugging: display picture
-    display_picture(5, 0);
+    //display_picture(5, 0);
 
     // get line of pixels
     for (int _i = 0; _i < CAMERA_WIDTH; _i++) {
