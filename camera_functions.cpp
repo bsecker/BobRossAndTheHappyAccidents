@@ -40,7 +40,7 @@ void get_picture(int *cameraLine1White) {
     for (int _i = 0; _i < CAMERA_WIDTH; _i++) {
 
         char pix = get_pixel(CAMERA_HEIGHT / 2, _i, 3);
-        printf("%d\n", pix);
+        //printf("%d\n", pix);
 
         // convert values to 1's and 0s
         if (pix >= WHITE_TOLERANCE) {
@@ -50,10 +50,10 @@ void get_picture(int *cameraLine1White) {
         }
     }
     // Print out entire line (debugging)
-    printf("done reading, printing out all lines...");
-    for (int _i = 0; _i < CAMERA_WIDTH; _i++) {
-        printf("%d\n", cameraLine1White[_i]);
-    }
+    printf("done reading camera");
+    //for (int _i = 0; _i < CAMERA_WIDTH; _i++) {
+    //    printf("%d\n", cameraLine1White[_i]);
+    //}
 }
 
 
