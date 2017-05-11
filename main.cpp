@@ -14,27 +14,32 @@ int main() {
     // track completion of the maze
     bool finished_maze = false;
 
-    int cameraLine1White[CAMERA_WIDTH]; //where 1 is white, 0 is black
+    int _temp__step = 0;
+	// Main game loop. Will run until finished maze
 
-    get_picture(cameraLine1White);
+    // Temporary: do this 500 times and then stop program
+	while (_temp__step < 500) {
+        int cameraLine1White[CAMERA_WIDTH]; //where 1 is white, 0 is black
 
-    int error = get_error(cameraLine1White);
-    printf("Error: %d\n", error);
+        get_picture(cameraLine1White);
 
-    set_motors(error);
+        int error = get_error(cameraLine1White);
+        printf("Error: %d\n", error);
 
+        set_motors(error);
+
+        _temp__step++;
+        sleep1(0,250000); // 0.25 seconds delay
+
+	}
+
+    // somehow this causes the program to fail - talk to Arthur about this.
     sleep1(5,0);
     set_motor(1, -100);
     sleep1(1,0);
     set_motor(2, -100);
     sleep1(1,0);
     stop_motors();
-
-
-	// Main game loop. Will run until finished maze
-	while (finished_maze == false) {
-        finished_maze = true; // quit straight away for now
-	}
 
 
     // cleanup
