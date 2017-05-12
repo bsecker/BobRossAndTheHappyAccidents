@@ -32,8 +32,8 @@ void set_motors(int proportional_error) {
     printf("Motor 1 speed: %d \n", MOTOR_SPEED+proportional_error);
     printf("Motor 2 speed: %d \n", MOTOR_SPEED-proportional_error);
 
-//    set_motor(1, MOTOR_SPEED + proportional_error);
-//    set_motor(2, -MOTOR_SPEED - proportional_error);
+    set_motor(1, MOTOR_SPEED + proportional_error);
+    set_motor(2, -MOTOR_SPEED - proportional_error);
 //    does this need to be set_motor(2, -MOTOR_SPEED - proportional_error);
 }
 
