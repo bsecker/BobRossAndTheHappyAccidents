@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
 #include "E101.h"
 
@@ -43,7 +44,7 @@ int main() {
 
         // error !=0 = there are white pixels.
         if (error != 0) {
-            set_motors(error * Kp);
+            set_motors(difference* Kp);
         }
         // if no white pixels, gone off course - search for it!
         else {

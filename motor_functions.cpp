@@ -37,6 +37,12 @@ void set_motors(int proportional_error) {
 //    does this need to be set_motor(2, -MOTOR_SPEED - proportional_error);
 }
 
+void stop_motors() {
+    set_motor(1, 0);
+    set_motor(2, 0);
+    printf("stopped motors!");
+}
+
 void backup_motors(){
     // stop temporarily
     stop_motors();
@@ -49,10 +55,4 @@ void backup_motors(){
     stop_motors();
 
 
-}
-
-void stop_motors() {
-    set_motor(1, 0);
-    set_motor(2, 0);
-    printf("stopped motors!");
 }

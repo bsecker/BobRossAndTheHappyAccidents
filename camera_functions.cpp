@@ -17,6 +17,7 @@ int get_error(int linePoints[]) {
         }
     }
 
+
     // if no white, dont do anything
     if (whitePixels > 0) {
         actual_error = error / whitePixels;
