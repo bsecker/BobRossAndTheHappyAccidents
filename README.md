@@ -23,11 +23,22 @@ Keanu:
 Daniel:
  - CAD designing and building prototype robot
 
-Matt:
+Mat:
  - CAD designing and building battery holder for robot
 
 ### Week Two
 Ben:
- - Quadrant one and two completed ( TODO)
+ - P component of PID implemented, working on D component of PID and refining P component.
+ - Fixed issue with motors running full when set to 0
 
+Daniel:
+ - Base Completed(1st time it didnt print properly), Key hardware for Quadrant one and two mounted, (needs trouble-shooting)
+ - print side IR sensor mounts
+ 
+Mat:
+ - Battery mount designed and completed(had to print in a different orientation to stop the base from warping), (TODO): Design and print front mount for IR sensor and help trouble-shoot
+ 
+Keanu:
+ - Refining P and D componenets of PID implementation, bugfixing.
+ - Fixed issue with motors running full when set to 0
 (guys please update this so its not a pain in the ass when we get around to writing the progress report)
