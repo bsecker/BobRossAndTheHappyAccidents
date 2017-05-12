@@ -2,10 +2,9 @@
 #include <time.h>
 #include "E101.h"
 
-int main()
-{
-int read_IR(int a)	
-init();
+
+// return average of three sensor readings.
+int read_IR(int a) {
 	int read1;
 	int read2;
 	int read3;
@@ -15,12 +14,9 @@ init();
 	 read2 = read_analog(a);
 	 sleep(0,500);
 	 read3 = read_analog(a);
-	 average = ((read1+read2+read3)/3);	
-
-
+	 average = ((read1+read2+read3)/3);
   
 	return average;
 }
 
-	
-	
+

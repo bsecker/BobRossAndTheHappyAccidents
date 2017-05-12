@@ -40,8 +40,6 @@ int main() {
         int difference = abs(error_1 - error_2);
         printf("difference: %d \n", difference);
 
-
-
         // error !=0 = there are white pixels.
         if (error_1 != 0) {
             set_motors((error_1 * Kp) + (difference * Kd));
