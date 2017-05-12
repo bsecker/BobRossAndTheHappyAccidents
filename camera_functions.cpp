@@ -5,9 +5,9 @@
 
 int get_error(int linePoints[]) {
     /* With linePoints input, find error value */
-    int error = 0;
+    float error = 0;
     int whitePixels = 0;
-    int actual_error = 0;
+    float actual_error = 0;
 
     // iterate through data and calculate error
     for (int _i = 0; _i < CAMERA_WIDTH; _i++) {
@@ -31,30 +31,23 @@ int get_error(int linePoints[]) {
 
 }
 
-void get_picture(int *cameraLine1White) {
-    take_picture();
-
+void get_picture(int *cameraLine, int y) {
     // debugging: display picture
     //display_picture(5, 0);
 
     // get line of pixels
     for (int _i = 0; _i < CAMERA_WIDTH; _i++) {
 
-        char pix = get_pixel(CAMERA_HEIGHT / 2, _i, 3);
+        char pix = get_pixel(y, _i, 3);
         //printf("%d\n", pix);
 
         // convert values to 1's and 0s
         if (pix >= WHITE_TOLERANCE) {
-            cameraLine1White[_i] = 1;
+            cameraLine[_i] = 1;
         } else {
-            cameraLine1White[_i] = 0;
+            cameraLine[_i] = 0;
         }
     }
-    // Print out entire line (debugging)
-    printf("done reading camera");
-    //for (int _i = 0; _i < CAMERA_WIDTH; _i++) {
-    //    printf("%d\n", cameraLine1White[_i]);
-    //}
 }
 
 

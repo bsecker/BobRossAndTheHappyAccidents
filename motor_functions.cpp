@@ -39,11 +39,15 @@ void set_motors(int proportional_error) {
 
 void backup_motors(){
     // stop temporarily
-    set_motor(1, 0);
-    set_motor(2, 0);
-    sleep1(0,20000); // TODO check right value
+    stop_motors();
+    sleep1(0,2000); // TODO check right value
+    // move backwards at an angle
+    set_motor(1, -BACK_SPEED);
+    set_motor(2, -BACK_SPEED*1.2);
+    sleep1(1,0);
+    // stop again
+    stop_motors();
 
-    // TODO finish
 
 }
 

@@ -15,7 +15,6 @@ int main() {
     bool finished_maze = false;
 
     int total_error = 0;
-    int previous_error;
 
 
     int _temp__step = 0;
@@ -24,11 +23,21 @@ int main() {
     // Temporary: do this 500 times and then stop program
 	while (_temp__step < 500) {
         int cameraLine1White[CAMERA_WIDTH]; //where 1 is white, 0 is black
+        int cameraLine2White[CAMERA_WIDTH]; // slightly above line 1
 
-        get_picture(cameraLine1White);
+        take_picture();
 
-        int error = get_error(cameraLine1White);
-        printf("Error: %d\n", error);
+        // set both camera lines
+        get_picture(cameraLine1White, CAMERA_HEIGHT/2);
+        get_picture(cameraLine2White, CAMERA_HEIGHT/2 - 10);
+
+        int error_1 = get_error(cameraLine1White);
+        int error_2 = get_error(cameraLine2White);
+        printf("Error 1: %d ", error_1);
+        printf("Error 2: %d\n", error_2);
+
+        int difference = abs(error_1 - error_2);
+        printf("difference: %d \n", difference);
 
 
 
