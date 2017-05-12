@@ -15,7 +15,7 @@ int main() {
     bool finished_maze = false;
 
     int total_error = 0;
-    int previous error;
+    int previous_error;
 
 
     int _temp__step = 0;

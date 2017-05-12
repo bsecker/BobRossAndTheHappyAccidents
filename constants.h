@@ -12,7 +12,7 @@ const int WHITE_TOLERANCE = 128;
 const char SERVER_ADDRESS[16] = "130.128.150.128";
 
 // Robot
-const int MOTOR_SPEED = 100;
+const int MOTOR_SPEED = 50;
 const float Kp = 0.5; // constant of proportionality
 const float Ki = 0.05; // not so useful for avc
 const float Kd = 0.5;
