@@ -53,6 +53,4 @@ void backup_motors(){
     sleep1(1,0);
     // stop again
     stop_motors();
-
-
 }
