@@ -14,6 +14,10 @@ int main() {
     // track completion of the maze
     bool finished_maze = false;
 
+    int total_error = 0;
+    int previous error;
+
+
     int _temp__step = 0;
 	// Main game loop. Will run until finished maze
 
@@ -26,7 +30,17 @@ int main() {
         int error = get_error(cameraLine1White);
         printf("Error: %d\n", error);
 
-        set_motors(error);
+
+
+        // error !=0 = there are white pixels.
+        if (error != 0) {
+            set_motors(error * Kp);
+        }
+        // if no white pixels, gone off course - search for it!
+        else {
+            // back up a bit
+            backup_motors();
+        }
 
         _temp__step++;
         sleep1(0,250000); // 0.25 seconds delay

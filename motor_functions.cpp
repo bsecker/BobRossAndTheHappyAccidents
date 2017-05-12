@@ -28,9 +28,20 @@ void turnright( int duration, int speed) {
     set_motor(2, 0);
 }
 
-void set_motors(int error) {
-    set_motor(1, MOTOR_SPEED + error);
-    set_motor(2, MOTOR_SPEED - error);
+void set_motors(int proportional_error) {
+    set_motor(1, MOTOR_SPEED + proportional_error);
+    set_motor(2, -MOTOR_SPEED - proportional_error);
+//    does this need to be set_motor(2, -MOTOR_SPEED - proportional_error);
+}
+
+void backup_motors(){
+    // stop temporarily
+    set_motor(1, 0);
+    set_motor(2, 0);
+    sleep1(0,20000); // TODO check right value
+
+    // TODO finish
+
 }
 
 void stop_motors() {

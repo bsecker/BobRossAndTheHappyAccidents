@@ -12,7 +12,7 @@ int get_error(int linePoints[]) {
     // iterate through data and calculate error
     for (int _i = 0; _i < CAMERA_WIDTH; _i++) {
         if (linePoints[_i] == 1) {
-            error += (_i - (CAMERA_WIDTH / 2));
+            error = error + (_i - (CAMERA_WIDTH / 2));
             whitePixels++;
         }
     }
