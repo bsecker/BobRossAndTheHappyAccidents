@@ -43,7 +43,7 @@ int main() {
 
 
         // error !=0 = there are white pixels.
-        if (error != 0) {
+        if (error_1 != 0) {
             set_motors(difference* Kp);
         }
         // if no white pixels, gone off course - search for it!
