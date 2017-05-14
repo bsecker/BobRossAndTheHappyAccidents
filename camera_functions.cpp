@@ -55,7 +55,9 @@ void normalise_camera_brightness() {
     ;
 }
 
-
+bool is_on_red(){
+    return get_pixel( CAMERA_WIDTH/2, CAMERA_HEIGHT/2, 0) > RED_TOLERANCE;
+}
 
 
 

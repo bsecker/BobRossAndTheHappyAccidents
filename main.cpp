@@ -12,12 +12,12 @@
 int main() {
     init();
 
-    // track completion of the maze
-    bool finished_maze = false;
+    // track completion of the line maze and block maze
+    bool finished_line_maze = false;
+    bool finished_block_maze = false;
 
-	// Main game loop. Will run until finished maze
-
-	while (!finished_maze) {
+	// Line follower loop. will run until finished line maze
+	while (!finished_line_maze) {
 
         int cameraLine1White[CAMERA_WIDTH];
         int cameraLine2White[CAMERA_WIDTH]; // slightly above line 1
@@ -72,8 +72,19 @@ int main() {
             backup_motors();
         }
 
+        // break loop if over red part of maze
+        if (is_on_red()) {
+            break;
+        }
+
         sleep1(0,10000); // 0.01 seconds delay - TODO do we need this?
 	}
+
+    printf("Finished line following, starting maze \n");
+
+    while (!finished_block_maze) {
+        ;
+    }
 
 
     // cleanup

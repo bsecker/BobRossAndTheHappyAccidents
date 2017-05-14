@@ -7,6 +7,7 @@
 const int CAMERA_WIDTH = 320;
 const int CAMERA_HEIGHT = 240;
 const int WHITE_TOLERANCE = 128;
+const int RED_TOLERANCE = 200; // change this
 
 // Network
 const char SERVER_ADDRESS[16] = "130.128.150.128";
