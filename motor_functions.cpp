@@ -2,7 +2,10 @@
 #include <time.h>
 #include "E101.h"
 
-void turnleft( int duration, int speed) {
+void turnleft() {
+    int speed = 50; // change these values
+    int duration = 1000000;
+
 	// set left motor to -speed and right motor to speed
 	set_motor(1, -speed);
 	set_motor(2, speed);
@@ -15,7 +18,10 @@ void turnleft( int duration, int speed) {
 	set_motor(2, 0);
 }
 
-void turnright( int duration, int speed) {
+void turnright() {
+    int speed = 50; // change these values
+    int duration = 1000000;
+
     // set left motor to -speed and right motor to speed
     set_motor(1, speed);
     set_motor(2, -speed);
@@ -29,12 +35,24 @@ void turnright( int duration, int speed) {
 }
 
 void set_motors(int proportional_error) {
-    printf("Motor 1 speed: %d \n", MOTOR_SPEED+proportional_error);
-    printf("Motor 2 speed: %d \n", MOTOR_SPEED-proportional_error);
+    int motor_1 = (int)((double)MOTOR_SPEED+proportional_error);
+    int motor_2 = (int)((double)-MOTOR_SPEED-proportional_error);
 
-    set_motor(1, MOTOR_SPEED + proportional_error);
-    set_motor(2, -MOTOR_SPEED - proportional_error);
-//    does this need to be set_motor(2, -MOTOR_SPEED - proportional_error);
+    // limit at -250 to 250 for sanity
+    if (motor_1 > MOTOR_MAX) motor_1=MOTOR_MAX;
+    if (motor_1 < MOTOR_MIN) motor_1=MOTOR_MIN;
+    if (motor_2 > MOTOR_MAX) motor_2=MOTOR_MAX;
+    if (motor_2 < MOTOR_MIN) motor_2=MOTOR_MIN;
+
+    // print out values (debugging)
+    printf("Motor 1 speed: %d \n", motor_1);
+    printf("Motor 2 speed: %d \n", motor_2);
+
+    // set motors
+    set_motor(1, motor_1);
+    set_motor(2, motor_2);
+
+
 }
 
 void stop_motors() {
@@ -46,11 +64,13 @@ void stop_motors() {
 void backup_motors(){
     // stop temporarily
     stop_motors();
-    sleep1(0,2000); // TODO check right value
+    sleep1(0,20000);
+
     // move backwards at an angle
     set_motor(1, -BACK_SPEED);
     set_motor(2, -BACK_SPEED*1.2);
     sleep1(1,0);
+
     // stop again
     stop_motors();
 }

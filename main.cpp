@@ -15,15 +15,11 @@ int main() {
     // track completion of the maze
     bool finished_maze = false;
 
-    int total_error = 0;
-
-
-    int _temp__step = 0;
 	// Main game loop. Will run until finished maze
 
-    // Temporary: do this 500 times and then stop program
-	while (_temp__step < 500) {
-        int cameraLine1White[CAMERA_WIDTH]; //where 1 is white, 0 is black
+	while (!finished_maze) {
+
+        int cameraLine1White[CAMERA_WIDTH];
         int cameraLine2White[CAMERA_WIDTH]; // slightly above line 1
 
         take_picture();
@@ -32,39 +28,55 @@ int main() {
         get_picture(cameraLine1White, CAMERA_HEIGHT/2);
         get_picture(cameraLine2White, CAMERA_HEIGHT/2 - 10);
 
-        int error_1 = get_error(cameraLine1White);
-        int error_2 = get_error(cameraLine2White);
-        printf("Error 1: %d ", error_1);
-        printf("Error 2: %d\n", error_2);
+        // track errors
+        float error1 = 0;
+        float error2 = 0;
+        int whitePixels1 = 0;
+        int whitePixels2 = 0;
 
-        int difference = abs(error_1 - error_2);
-        printf("difference: %d \n", difference);
-
-        // error !=0 = there are white pixels.
-        if (error_1 != 0) {
-            set_motors((error_1 * Kp) + (difference * Kd));
+        // iterate through data and calculate error
+        for (int _i = 0; _i < CAMERA_WIDTH; _i++) {
+            if (cameraLine1White[_i] == 1) {
+                error1 += (_i - (CAMERA_WIDTH / 2));
+            }
+            if (cameraLine2White[_i] == 1) {
+                error2 += (_i - (CAMERA_WIDTH / 2));
+            }
         }
-        // if no white pixels, gone off course - search for it!
+
+        // change error for each line to average error
+        if (whitePixels1 > 0) {
+            error1 = error1/whitePixels1;
+        }
+        if (whitePixels2 > 0) {
+            error2 = error21/whitePixels1;
+        }
+
+        // calculate derivative - difference in errors
+        int difference = error2 - error1; //TODO should be absolute? do we care about sign
+        printf("line difference: %d \n ", difference);
+
+
+        // TODO: we need to test Kp and Kd.
+        // Start by making Kp perfect and then changing Kd after that.
+
+        // set motors if we have white pixels.
+        if (whitePixels1 > 0) {
+            printf("Error: Kp = %d Kd = %d Total = %d \n", (error1 * Kp), (difference * Kd), (error1 * Kp) + (difference * Kd));
+            set_motors((error1 * Kp) + (difference * Kd));
+        }
+        // if no white pixels, go back and search for it!
         else {
             // back up a bit
+            printf("Moving backwards.");
             backup_motors();
         }
 
-        _temp__step++;
-        sleep1(0,250000); // 0.25 seconds delay
-
+        sleep1(0,10000); // 0.01 seconds delay - TODO do we need this?
 	}
-
-    // somehow this causes the program to fail - talk to Arthur about this.
-    sleep1(5,0);
-    set_motor(1, -100);
-    sleep1(1,0);
-    set_motor(2, -100);
-    sleep1(1,0);
-    stop_motors();
 
 
     // cleanup
-//    stop_motors();
+    stop_motors();
 	return 0;
 }
