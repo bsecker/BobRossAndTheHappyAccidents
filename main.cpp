@@ -49,7 +49,7 @@ int main() {
             error1 = error1/whitePixels1;
         }
         if (whitePixels2 > 0) {
-            error2 = error21/whitePixels1;
+            error2 = error2/whitePixels1;
         }
 
         // calculate derivative - difference in errors
