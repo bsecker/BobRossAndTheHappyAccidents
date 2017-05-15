@@ -16,14 +16,16 @@ int main() {
     bool finished_line_maze = false;
     bool finished_block_maze = false;
 
-	// Line follower loop. will run until finished line maze
+    take_picture();
+//    display_picture(2,0);
+
+ 	// Line follower loop. will run until finished line maze
 	while (!finished_line_maze) {
 	printf("\n\n");
         int cameraLine1White[CAMERA_WIDTH];
         int cameraLine2White[CAMERA_WIDTH]; // slightly above line 1
 
         take_picture();
-
         // set both camera lines
         get_picture(cameraLine1White, CAMERA_HEIGHT/2);
         get_picture(cameraLine2White, CAMERA_HEIGHT/2 - 10);
@@ -50,14 +52,14 @@ int main() {
         // change error for each line to average error
         if (whitePixels1 > 0) {
             error1 = error1/whitePixels1;
-	    printf("Error 1: %f \n", error1);
+//	    printf("Error 1: %f \n", error1);
         }
         if (whitePixels2 > 0) {
-            error2 = error2/whitePixels1;
+            error2 = error2/whitePixels2;
         }
 
         // calculate derivative - difference in errors
-        int difference = error2 - error1; //TODO should be absolute? do we care about sign
+        float difference = error2 - error1; //TODO should be absolute? do we care about sign
         printf("line difference: %f \n ", difference);
 
 
@@ -66,15 +68,15 @@ int main() {
 
         // set motors if we have white pixels.
         if (whitePixels1 > 0) {
-	    printf("Whitepixels: %d \n ", whitePixels1);
-            printf("Error: Kp = %f Kd = %d Total = %d \n", (error1 * Kp), (difference * Kd), (error1 * Kp) + (difference * Kd));
+	    //printf("Whitepixels: %d \n ", whitePixels1);
+            printf("Error: Kp = %f Kd = %f Total = %f \n", (error1 * Kp), (difference * Kd), (error1 * Kp) + (difference * Kd));
             set_motors((error1 * Kp) + (difference * Kd));
         }
         // if no white pixels, go back and search for it!
         else {
             // back up a bit
             printf("Moving backwards. \n");
-            backup_motors();
+           // backup_motors();
         }
 
         // break loop if over red part of maze
