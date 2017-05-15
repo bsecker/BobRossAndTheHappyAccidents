@@ -18,7 +18,7 @@ int main() {
 
 	// Line follower loop. will run until finished line maze
 	while (!finished_line_maze) {
-
+	printf("\n\n");
         int cameraLine1White[CAMERA_WIDTH];
         int cameraLine2White[CAMERA_WIDTH]; // slightly above line 1
 
@@ -38,15 +38,19 @@ int main() {
         for (int _i = 0; _i < CAMERA_WIDTH; _i++) {
             if (cameraLine1White[_i] == 1) {
                 error1 += (_i - (CAMERA_WIDTH / 2));
+//		printf("white here \n");
+		whitePixels1 ++;
             }
             if (cameraLine2White[_i] == 1) {
                 error2 += (_i - (CAMERA_WIDTH / 2));
+		whitePixels2 ++;
             }
         }
 
         // change error for each line to average error
         if (whitePixels1 > 0) {
             error1 = error1/whitePixels1;
+	    printf("Error 1: %f \n", error1);
         }
         if (whitePixels2 > 0) {
             error2 = error2/whitePixels1;
@@ -54,7 +58,7 @@ int main() {
 
         // calculate derivative - difference in errors
         int difference = error2 - error1; //TODO should be absolute? do we care about sign
-        printf("line difference: %d \n ", difference);
+        printf("line difference: %f \n ", difference);
 
 
         // TODO: we need to test Kp and Kd.
@@ -62,19 +66,20 @@ int main() {
 
         // set motors if we have white pixels.
         if (whitePixels1 > 0) {
-            printf("Error: Kp = %d Kd = %d Total = %d \n", (error1 * Kp), (difference * Kd), (error1 * Kp) + (difference * Kd));
+	    printf("Whitepixels: %d \n ", whitePixels1);
+            printf("Error: Kp = %f Kd = %d Total = %d \n", (error1 * Kp), (difference * Kd), (error1 * Kp) + (difference * Kd));
             set_motors((error1 * Kp) + (difference * Kd));
         }
         // if no white pixels, go back and search for it!
         else {
             // back up a bit
-            printf("Moving backwards.");
+            printf("Moving backwards. \n");
             backup_motors();
         }
 
         // break loop if over red part of maze
         if (is_on_red()) {
-            break;
+            ;
         }
 
         sleep1(0,10000); // 0.01 seconds delay - TODO do we need this?
