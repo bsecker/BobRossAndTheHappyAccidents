@@ -84,7 +84,7 @@ int main() {
             ;
         }
 
-        sleep1(0,10000); // 0.01 seconds delay - TODO do we need this?
+        sleep1(0,1000); // 0.01 seconds delay - TODO do we need this?
 	}
 
     printf("Finished line following, starting maze \n");
