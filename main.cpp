@@ -85,7 +85,7 @@ int main() {
         }
 
         // break loop if over the big white line at the start of the maze
-        if (is_over_line()) {
+        if (is_over_line(whitePixels1)) {
             break;
         }
 

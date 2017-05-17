@@ -52,7 +52,7 @@ void get_picture(int *cameraLine, int y) {
 
 // Modify cameraLine to have 1's and 0's instead of raw camera, but for a vertical line.
 void get_picture_vert(int *cameraLine, int x) {
-    for (int _i = 0; i < CAMERA_HEIGHT, _i++) {
+    for (int _i = 0; _i < CAMERA_HEIGHT; _i++) {
         char pix = get_pixel(_i, x, 3);
 
         if (pix >= WHITE_TOLERANCE) {
