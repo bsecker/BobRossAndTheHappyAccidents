@@ -11,7 +11,7 @@
 int main(){
     init();
     set_motor(1,-100);
-    set_motor(2,-100);
+    set_motor(2,100);
     sleep1(3,0);
     set_motor(1,0);
     set_motor(2,0);
