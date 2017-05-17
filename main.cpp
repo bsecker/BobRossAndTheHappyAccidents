@@ -6,6 +6,8 @@
 #include "camera_functions.cpp"
 #include "motor_functions.cpp"
 #include "constants.h"
+#include "network_functions.cpp"
+
 
 // Main file for running Robot program.
 

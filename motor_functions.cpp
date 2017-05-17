@@ -68,8 +68,8 @@ void backup_motors(){
 
     // move backwards at an angle
     set_motor(1, -BACK_SPEED);
-    set_motor(2, -BACK_SPEED*1.2);
-    sleep1(1,0);
+    set_motor(2, BACK_SPEED*1.2);
+    sleep1(0,500000);
 
     // stop again
     stop_motors();
