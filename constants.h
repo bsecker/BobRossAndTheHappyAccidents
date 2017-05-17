@@ -17,7 +17,7 @@ char SERVER_PASSWORD[24] = "Please";
 
 
 // Robot
-const int MOTOR_SPEED = 40;
+const int MOTOR_SPEED = 25;
 const int BACK_SPEED = 10;
 const int MOTOR_MAX = 250; // max motor speed
 const int MOTOR_MIN = -250; // min motor speed

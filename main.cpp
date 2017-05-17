@@ -17,7 +17,7 @@ int main() {
     // track completion of the line maze and block maze
     bool finished_line_maze = false;
     bool finished_block_maze = false;
-
+    open_gate();
     take_picture();
 //    display_picture(2,0);
 	int previous_error = 0;

@@ -35,8 +35,8 @@ void turnright() {
 }
 
 void set_motors(int proportional_error) {
-    int motor_1 = (int)((double)MOTOR_SPEED+proportional_error);
-    int motor_2 = (int)((double)MOTOR_SPEED-proportional_error);
+    int motor_1 = (int)((double)MOTOR_SPEED-proportional_error);
+    int motor_2 = (int)((double)MOTOR_SPEED+proportional_error);
 
     // limit at -250 to 250 for sanity
     if (motor_1 > MOTOR_MAX) motor_1=MOTOR_MAX;
