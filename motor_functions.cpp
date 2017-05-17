@@ -2,7 +2,8 @@
 #include <time.h>
 #include "E101.h"
 
-void turnleft() {
+// turn left until it reaches
+void turnleft(int times) {
     int speed = 50; // change these values
     int duration = 1000000;
 

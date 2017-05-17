@@ -43,3 +43,17 @@ Keanu:
  - Fixed issue with motors running full when set to 0
 (guys please update this so its not a pain in the ass when we get around to writing the progress report)
 current IP: 10.140.93.191
+
+
+### How we are going to do the second part of the maze
+
+
+1) new loop once the error becomes massive. Need to make sure we dont accidentally get this anywhere else!
+2) measure line at either side of camera
+3) if on left side: turn left
+3) if at T: turn left:
+4) if on right but not on left: turn right
+
+turning: loop to turn until error is close to zero.
+
+THIS NEEDS TO BE UPDATED.

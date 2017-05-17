@@ -8,9 +8,11 @@
 const int CAMERA_WIDTH = 320;
 const int CAMERA_HEIGHT = 240;
 const int WHITE_TOLERANCE = 128;
-const int RED_TOLERANCE = 200; // change this
+const int RED_TOLERANCE = 200;
+const int SIDE_LINE_TOLERANCE = 30;
 
 // Network
+const int MAZE_TOLERANCE = 30;
 char SERVER_ADDRESS[] = "130.128.150.128"; //this and password couldnt be constants could just use local variables in network_functions file
 const int SERVER_PORT = 1024;
 char SERVER_PASSWORD[24] = "Please";
