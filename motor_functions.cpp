@@ -50,8 +50,8 @@ void set_motors(int proportional_error) {
     printf("Motor 2 speed: %d \n", motor_2);
 
     // set motors
-    set_motor(1, -motor_1);
-    set_motor(2, motor_2);
+    set_motor(1, motor_1);
+    set_motor(2, -motor_2);
 
 
 }
