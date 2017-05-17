@@ -45,8 +45,8 @@ int main() {
         for (int _i = 0; _i < CAMERA_WIDTH; _i++) {
             if (cameraLine1White[_i] == 1) {
                 error1 += (_i - (CAMERA_WIDTH / 2));
-//		printf("white here \n");
-		whitePixels1 ++;
+//		        printf("white here \n");
+		        whitePixels1 ++;
             }
             if (cameraLine2White[_i] == 1) {
                 error2 += (_i - (CAMERA_WIDTH / 2));
@@ -73,7 +73,7 @@ int main() {
 
         // set motors if we have white pixels.
         if (whitePixels1 > 0) {
-	    //printf("Whitepixels: %d \n ", whitePixels1);
+	        printf("Whitepixels: %d \n ", whitePixels1);
             printf("Error: Kp = %f Kd = %f Total = %f \n", (error1 * Kp), (difference * Kd), (error1 * Kp) + (difference * Kd));
             set_motors((error1 * Kp) + (difference * Kd));
         }
