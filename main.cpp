@@ -18,7 +18,8 @@ int main() {
 
     take_picture();
 //    display_picture(2,0);
-
+	int previous_error = 0;
+	int current_error = 0;
  	// Line follower loop. will run until finished line maze
 	while (!finished_line_maze) {
 	printf("\n\n");
