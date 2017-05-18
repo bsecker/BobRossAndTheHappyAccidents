@@ -42,7 +42,9 @@ Keanu:
  - Refining P and D componenets of PID implementation, bugfixing.
  - Fixed issue with motors running full when set to 0
 (guys please update this so its not a pain in the ass when we get around to writing the progress report)
-current IP: 10.140.93.191
+
+
+current IP: 10.140.30.189
 
 
 ### How we are going to do the second part of the maze
