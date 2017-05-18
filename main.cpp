@@ -117,7 +117,7 @@ int main() {
             }
         }
 
-        printf("Left: %b, Right: %b", line_left, line_right);
+        printf("Left: %d, Right: %d", line_left, line_right);
 
     }
 
