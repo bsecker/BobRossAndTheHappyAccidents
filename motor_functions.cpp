@@ -2,7 +2,8 @@
 #include <time.h>
 #include "E101.h"
 
-void turnleft() {
+// turn left until it reaches
+void turnleft(int times) {
     int speed = 50; // change these values
     int duration = 1000000;
 
@@ -35,8 +36,8 @@ void turnright() {
 }
 
 void set_motors(int proportional_error) {
-    int motor_1 = (int)((double)MOTOR_SPEED+proportional_error);
-    int motor_2 = (int)((double)MOTOR_SPEED-proportional_error);
+    int motor_1 = (int)((double)MOTOR_SPEED-proportional_error);
+    int motor_2 = (int)((double)MOTOR_SPEED+proportional_error);
 
     // limit at -250 to 250 for sanity
     if (motor_1 > MOTOR_MAX) motor_1=MOTOR_MAX;
@@ -49,8 +50,8 @@ void set_motors(int proportional_error) {
     printf("Motor 2 speed: %d \n", motor_2);
 
     // set motors
-    set_motor(1, -motor_1);
-    set_motor(2, motor_2);
+    set_motor(1, motor_1);
+    set_motor(2, -motor_2);
 
 
 }
@@ -68,8 +69,8 @@ void backup_motors(){
 
     // move backwards at an angle
     set_motor(1, -BACK_SPEED);
-    set_motor(2, -BACK_SPEED*1.2);
-    sleep1(1,0);
+    set_motor(2, BACK_SPEED*1.2);
+    sleep1(0,500000);
 
     // stop again
     stop_motors();
