@@ -18,11 +18,9 @@ int main() {
     bool finished_line = false;
     bool finished_line_maze = false;
     bool finished_block_maze = false;
-//    open_gate();
+	open_gate();
     take_picture();
 //    display_picture(2,0);
-	int previous_error = 0;
-	int current_error = 0;
  	// Line follower loop. will run until finished line maze
 	while (!finished_line) {
 
@@ -33,7 +31,7 @@ int main() {
         take_picture();
         // set both camera lines
         get_picture(cameraLine1White, CAMERA_HEIGHT/2);
-        get_picture(cameraLine2White, CAMERA_HEIGHT/2 - 10);
+        get_picture(cameraLine2White, CAMERA_HEIGHT/2 - 70);
 
         // track errors
         float error1 = 0;
@@ -92,7 +90,7 @@ int main() {
         sleep1(0,1000); // 0.01 seconds delay - TODO do we need this?
 	}
 
-
+    stop_motors(); //temporarily stop the robot
     // at this point, the robot is over the line - now we can go through the line maze.
     printf("Finished line following, starting line maze \n");
     while (!finished_line_maze) {
