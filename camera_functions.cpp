@@ -16,7 +16,7 @@ void set_error(int *linePoints, int *whitePixels, float *error) {
 
     // change the error variable to the average error
     if (whitePixels > 0) {
-        error = error / (float)whitePixels;
+        error = error / whitePixels;
     }
 }
 
