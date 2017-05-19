@@ -14,6 +14,8 @@
 int main() {
     init();
 
+    open_gate();
+
     // track completion of the line maze and block maze
     bool finished_line = false;
     bool finished_line_maze = false;
