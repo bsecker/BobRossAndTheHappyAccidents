@@ -5,7 +5,7 @@
 
 // using linepoints array, modify whitePixels and error
 float set_error(int *linePoints, int *whitePixels) {
-    double error = 0;
+    float error = 0;
 
     // iterate through data and calculate error
     for (int _i = 0; _i < CAMERA_WIDTH; _i++) {
