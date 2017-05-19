@@ -40,8 +40,8 @@ int main() {
         int whitePixels2 = 0;
 
         // get the errors for each line
-        error1 = set_error(cameraLine1White, whitePixels1, error1);
-        error2 = set_error(cameraLine2White, whitePixels2, error2);
+        error1 = set_error(cameraLine1White, whitePixels1);
+        error2 = set_error(cameraLine2White, whitePixels2);
 
         // calculate derivative - difference in errors
         float difference = error2 - error1; //TODO should be absolute? do we care about sign
