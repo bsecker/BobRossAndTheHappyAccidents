@@ -19,11 +19,6 @@ int main() {
     bool finished_line_maze = false;
     bool finished_block_maze = false;
 
-    take_picture();
-
-	  int previous_error = 0;
-    int current_error = 0;
-
  	   // Line follower loop. will run until finished line maze (including multipath maze)
 	   while (!finished_line) {
 
@@ -34,7 +29,7 @@ int main() {
         take_picture();
         // set both camera lines
         get_picture(cameraLine1White, CAMERA_HEIGHT/2);
-        get_picture(cameraLine2White, CAMERA_HEIGHT/2 - 10);
+        get_picture(cameraLine2White, CAMERA_HEIGHT/2 - 70);
 
         // track errors and white pixels
         float error1 = 0;
@@ -71,11 +66,8 @@ int main() {
         }
 
 
-
-        sleep1(0,1000); // 0.01 seconds delay, for sanity. Might not be required
-	  }
-
-
+        sleep1(0,1000); // 0.01 seconds delay - TODO do we need this?
+	}
 
     // cleanup
     stop_motors();
