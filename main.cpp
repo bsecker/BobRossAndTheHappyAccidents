@@ -36,14 +36,15 @@ int main() {
         // track errors and white pixels
         float error1 = 0;
         float error2 = 0;
-        int whitePixels1 = 0;
-        int whitePixels2 = 0;
-        int *whitePixels1Pointer = &whitePixels1;
-        int* whitePixels2Pointer = &whitePixels2;
+        int *whitePixels1 = 0;
+        int *whitePixels2 = 0;
+        //
+        //int *whitePixels1Pointer = &whitePixels1;
+        //int* whitePixels2Pointer = &whitePixels2;
 
         // get the errors for each line
-        error1 = set_error(cameraLine1White, whitePixels1Pointer);
-        error2 = set_error(cameraLine2White, whitePixels2Pointer);
+        error1 = set_error(cameraLine1White, whitePixels1);
+        error2 = set_error(cameraLine2White, whitePixels2);
 	
         // calculate derivative - difference in errors
         float difference = error2 - error1; //TODO should be absolute? do we care about sign
@@ -66,7 +67,7 @@ int main() {
         else {
             // back up a bit
             printf("Moving backwards. \n");
-            backup_motors();
+            backup_motors();				
         }
 
 

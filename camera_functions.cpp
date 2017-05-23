@@ -4,13 +4,13 @@
 #include "constants.h"
 
 // using linepoints array, modify whitePixels and error
-float set_error(int *linePoints, int* whitePixels) {
+float set_error(int *linePoints, int *whitePixels) {
     float error = 0;
     // iterate through data and calculate error
     for (int _i = 0; _i < CAMERA_WIDTH; _i++) {
         if (linePoints[_i] == 1) {
             error += (_i - (CAMERA_WIDTH / 2));
-            whitePixels++;
+            *whitePixels++;
         }
     }
 
