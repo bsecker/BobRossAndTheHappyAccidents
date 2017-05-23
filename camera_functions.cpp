@@ -3,25 +3,6 @@
 #include "E101.h"
 #include "constants.h"
 
-// using linepoints array, modify whitePixels and error
-float set_error(int *linePoints, int *whitePixels) {
-    float error = 0;
-    // iterate through data and calculate error
-    for (int _i = 0; _i < CAMERA_WIDTH; _i++) {
-        if (linePoints[_i] == 1) {
-            error += (_i - (CAMERA_WIDTH / 2));
-            *whitePixels++;
-        }
-    }
-
-    // change the error variable to the average error
-    if (whitePixels > 0) {
-        error = (int)error / *whitePixels;
-    }
-
-    return error;
-}
-
 // modify cameraLine to have 1's and 0's instead of raw camera values.
 void get_picture(int *cameraLine, int y) {
     // debugging: display picture
