@@ -31,7 +31,7 @@ int main() {
         take_picture();
         // set both camera lines
         get_picture(cameraLine1White, CAMERA_HEIGHT/2);
-        get_picture(cameraLine2White, CAMERA_HEIGHT/2 - 70);
+        get_picture(cameraLine2White, CAMERA_HEIGHT/2 - 10);
 
         // track errors and white pixels
         float error1 = 0;
@@ -60,8 +60,6 @@ int main() {
        if (whitePixels2 > 0) {
            error2 = (int)error2 / whitePixels2;
        }
-
-
 
         // calculate derivative - difference in errors
         float difference = error2 - error1; //TODO should be absolute? do we care about sign
