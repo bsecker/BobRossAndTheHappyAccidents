@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <time.h>
 #include "E101.h"
+#include "constants.h"
 
 // turn left until it reaches
 void turnleft(int times) {
@@ -65,11 +66,11 @@ void stop_motors() {
 void backup_motors(){
     // stop temporarily
     stop_motors();
-    sleep1(0,20000);
+    sleep1(0,200000);
 
     // move backwards at an angle
     set_motor(1, -BACK_SPEED);
-    set_motor(2, BACK_SPEED*1.2);
+    set_motor(2, -BACK_SPEED);
     sleep1(0,500000);
 
     // stop again

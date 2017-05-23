@@ -38,11 +38,13 @@ int main() {
         float error2 = 0;
         int whitePixels1 = 0;
         int whitePixels2 = 0;
+        int *whitePixels1Pointer = &whitePixels1;
+        int* whitePixels2Pointer = &whitePixels2;
 
         // get the errors for each line
-        error1 = set_error(cameraLine1White, whitePixels1);
-        error2 = set_error(cameraLine2White, whitePixels2);
-
+        error1 = set_error(cameraLine1White, whitePixels1Pointer);
+        error2 = set_error(cameraLine2White, whitePixels2Pointer);
+	
         // calculate derivative - difference in errors
         float difference = error2 - error1; //TODO should be absolute? do we care about sign
         printf("line difference: %f \n ", difference);
