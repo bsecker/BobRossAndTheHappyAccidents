@@ -58,7 +58,7 @@ int main() {
        }
        // change the error variable to the average error
        if (whitePixels2 > 0) {
-           error2 = (int)error2 / whitePixels1;
+           error2 = (int)error2 / whitePixels2;
        }
 
 
@@ -68,8 +68,8 @@ int main() {
         printf("line difference: %f \n ", difference);
 
         // track if there is a line left or right of the current line.
-        bool line_left = is_line_left();
-        bool line_right = is_line_right();
+       // bool line_left = is_line_left();
+       // bool line_right = is_line_right();
 
         // set motors if we have white pixels.
         if (whitePixels1 > 0) {
@@ -81,7 +81,7 @@ int main() {
         else {
             // back up a bit
             printf("Moving backwards. \n");
-            backup_motors();				
+//            backup_motors();				
         }
 
 
