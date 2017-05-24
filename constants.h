@@ -21,6 +21,7 @@ const int MOTOR_SPEED = 37;
 const int BACK_SPEED = 37;
 const int MOTOR_MAX = 250; // max motor speed
 const int MOTOR_MIN = -250; // min motor speed
+const int BACK_MOD = 1.2;
 
 // PID
 // Guys we gotta play with this until its perfect! can't get much further without it!
