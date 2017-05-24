@@ -70,7 +70,7 @@ void backup_motors(){
 
     // move backwards
     set_motor(1, -BACK_SPEED);
-    set_motor(2, -BACK_SPEED);
+    set_motor(2, BACK_SPEED);
     sleep1(0,500000);
 
     // stop again
