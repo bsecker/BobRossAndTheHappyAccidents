@@ -64,7 +64,8 @@ void stop_motors() {
 }
 
 void backup_motors(){
-    // stop temporarily
+    printf("doing stuff!\n");    
+// stop temporarily
     stop_motors();
     sleep1(0,200000);
 
