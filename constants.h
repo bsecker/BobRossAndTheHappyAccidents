@@ -26,4 +26,4 @@ const int MOTOR_MIN = -250; // min motor speed
 // Guys we gotta play with this until its perfect! can't get much further without it!
 const float Kp = 0.1; // constant of proportionality
 const float Ki = 0.05; // not so useful for avc
-const float Kd = 0.1;
+const float Kd = 0.4;
