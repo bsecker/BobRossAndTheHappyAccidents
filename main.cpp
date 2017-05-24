@@ -81,10 +81,10 @@ int main() {
             printf("Moving backwards. \n");
 
             if (line_left) {
-                go_back(right);
+                go_back(1);
             }
             else if (line_right) {
-                go_back(left);
+                go_back(0);
             }
             else {
                 // turn around
