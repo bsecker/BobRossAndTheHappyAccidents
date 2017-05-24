@@ -75,7 +75,7 @@ void go_back(bool direction){
         // move backwards
         set_motor(1, -BACK_SPEED);
         set_motor(2, BACK_SPEED*BACK_MOD);
-        sleep1(0, 500000);
+        sleep1(0, BACK_TIME);
 
         // stop again
         stop_motors();
@@ -88,7 +88,7 @@ void go_back(bool direction){
         // move backwards
         set_motor(1, -BACK_SPEED*BACK_MOD);
         set_motor(2, BACK_SPEED);
-        sleep1(0, 500000);
+        sleep1(0, BACK_TIME);
 
         // stop again
         stop_motors();

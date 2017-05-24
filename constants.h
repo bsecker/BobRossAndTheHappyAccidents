@@ -7,7 +7,7 @@
 // Camera
 const int CAMERA_WIDTH = 320;
 const int CAMERA_HEIGHT = 240;
-const int WHITE_TOLERANCE = 128;
+const int WHITE_TOLERANCE = 115;
 const int RED_TOLERANCE = 200;
 const int SIDE_LINE_TOLERANCE = 30;
 
@@ -21,7 +21,8 @@ const int MOTOR_SPEED = 37;
 const int BACK_SPEED = 37;
 const int MOTOR_MAX = 250; // max motor speed
 const int MOTOR_MIN = -250; // min motor speed
-const int BACK_MOD = 1.2;
+const int BACK_MOD = 2;
+const int BACK_TIME = 250000;
 
 // PID
 // Guys we gotta play with this until its perfect! can't get much further without it!

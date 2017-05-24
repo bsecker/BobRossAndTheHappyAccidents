@@ -71,9 +71,9 @@ int main() {
        bool line_right = is_line_right();
 
 
-	printf("Left: %d, Right: %d \n", line_left, line_right);
+//	printf("Left: %d, Right: %d \n", line_left, line_right);
         // set motors if we have white pixels.
-        if (whitePixels1 > 0) {
+        if (whitePixels1 > 0 && whitePixels2 > 0) {
 	        printf("Whitepixels: %d \n ", whitePixels1);
             printf("Error: Kp = %f Kd = %f Total = %f \n", (error1 * Kp), (difference * Kd), (error1 * Kp) + (difference * Kd));
             set_motors((error1 * Kp) + (difference * Kd));
