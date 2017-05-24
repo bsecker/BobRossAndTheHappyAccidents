@@ -63,7 +63,7 @@ void stop_motors() {
     printf("stopped motors!");
 }
 
-void backup_motors(){
+void go_back(){
     // stop temporarily
     stop_motors();
     sleep1(0,200000);
