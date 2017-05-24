@@ -66,8 +66,8 @@ int main() {
         printf("line difference: %f \n ", difference);
 
         // track if there is a line left or right of the current line.
-       // bool line_left = is_line_left();
-       // bool line_right = is_line_right();
+       bool line_left = is_line_left();
+       bool line_right = is_line_right();
 
         // set motors if we have white pixels.
         if (whitePixels1 > 0) {
@@ -79,7 +79,17 @@ int main() {
         else {
             // back up a bit
             printf("Moving backwards. \n");
-            go_back();
+
+            if (line_left) {
+                go_back(right);
+            }
+            else if (line_right) {
+                go_back(left);
+            }
+            else {
+                // turn around
+                turn_around();
+            }
         }
 
 

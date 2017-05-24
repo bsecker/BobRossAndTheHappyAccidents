@@ -64,18 +64,47 @@ void stop_motors() {
 }
 
 
-// stop temporarily
-void go_back(){
-    // stop temporarily
+// stop temporarily, 1 = right 0 = left
+void go_back(bool direction){
+    printf("Moving backwards in Dir: %d \n", direction);
+    if (direction) {
+        // stop temporarily
+        stop_motors();
+        sleep1(0, 200000);
 
+        // move backwards
+        set_motor(1, -BACK_SPEED);
+        set_motor(2, BACK_SPEED*BACK_MOD);
+        sleep1(0, 500000);
+
+        // stop again
+        stop_motors();
+    }
+    else {
+        // stop temporarily
+        stop_motors();
+        sleep1(0, 200000);
+
+        // move backwards
+        set_motor(1, -BACK_SPEED*BACK_MOD);
+        set_motor(2, BACK_SPEED);
+        sleep1(0, 500000);
+
+        // stop again
+        stop_motors();
+    }
+}
+
+void turn_around() {
     stop_motors();
-    sleep1(0,200000);
+    stop_motors();
+    sleep1(0, 200000);
 
     // move backwards
-    set_motor(1, -BACK_SPEED);
-    printf("im doing stuff!\n");
+    set_motor(1, BACK_SPEED);
     set_motor(2, BACK_SPEED);
-    sleep1(0,500000);
+
+    sleep1(0, 500000);
 
     // stop again
     stop_motors();
