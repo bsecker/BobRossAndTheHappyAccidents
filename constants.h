@@ -17,14 +17,14 @@ const int SERVER_PORT = 1024;
 char SERVER_PASSWORD[24] = "Please";
 
 // Robot
-const int MOTOR_SPEED = 30;
-const int BACK_SPEED = 30;
+const int MOTOR_SPEED = 37;
+const int BACK_SPEED = 37;
 const int MOTOR_MAX = 250; // max motor speed
 const int MOTOR_MIN = -250; // min motor speed
 const int BACK_MOD = 1.2;
 
 // PID
 // Guys we gotta play with this until its perfect! can't get much further without it!
-const float Kp = 0.2; // constant of proportionality
+const float Kp = 0.1; // constant of proportionality
 const float Ki = 0.05; // not so useful for avc
-const float Kd = 0.2;
+const float Kd = 0.07;

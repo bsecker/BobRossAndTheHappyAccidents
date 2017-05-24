@@ -66,9 +66,12 @@ int main() {
         printf("line difference: %f \n ", difference);
 
         // track if there is a line left or right of the current line.
+
        bool line_left = is_line_left();
        bool line_right = is_line_right();
 
+
+	printf("Left: %d, Right: %d \n", line_left, line_right);
         // set motors if we have white pixels.
         if (whitePixels1 > 0) {
 	        printf("Whitepixels: %d \n ", whitePixels1);
