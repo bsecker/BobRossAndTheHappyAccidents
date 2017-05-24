@@ -11,10 +11,10 @@ void turnleft(int times) {
 	// set left motor to -speed and right motor to speed
 	set_motor(1, -speed);
 	set_motor(2, speed);
-	
+
 	// sleep for specified time
 	sleep1(0, duration);
-	
+
 	// stop motors
 	set_motor(1, 0);
 	set_motor(2, 0);
@@ -63,9 +63,11 @@ void stop_motors() {
     printf("stopped motors!");
 }
 
-void backup_motors(){
-    printf("doing stuff!\n");    
+
 // stop temporarily
+void go_back(){
+    // stop temporarily
+
     stop_motors();
     sleep1(0,200000);
 

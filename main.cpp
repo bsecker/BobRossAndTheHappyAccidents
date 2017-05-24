@@ -79,7 +79,7 @@ int main() {
         else {
             // back up a bit
             printf("Moving backwards. \n");
-//            backup_motors();				
+            go_back();
         }
 
 
