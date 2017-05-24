@@ -73,6 +73,7 @@ void go_back(){
 
     // move backwards
     set_motor(1, -BACK_SPEED);
+    printf("im doing stuff!\n");
     set_motor(2, BACK_SPEED);
     sleep1(0,500000);
 
