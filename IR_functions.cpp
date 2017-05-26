@@ -19,6 +19,11 @@ int read_IR(int pin) {
 	return average;
 }
 
+//returns true if there is an empty space in direction of Ir sensor
+bool is_gap(pin){
+	return read_IR(pin) > CLEARING_THRESHOLD;
+}
+
 // get error from side IR sensors
 int getIR_error(int left_reading, int right_reading){
 	int IR_error=(right_reading-left_reading);
