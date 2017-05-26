@@ -12,7 +12,7 @@ int read_IR(int pin) {
 	 read1 = read_analog(pin);
 	 sleep1(0,500);
 	 read2 = read_analog(pin);
-	 sleep(0,500);
+	 sleep1(0,500);
 	 read3 = read_analog(pin);
 	 average = ((read1+read2+read3)/3);
 
@@ -20,7 +20,7 @@ int read_IR(int pin) {
 }
 
 //returns true if there is an empty space in direction of Ir sensor
-bool is_gap(pin){
+bool is_gap(int pin){
 	return read_IR(pin) > CLEARING_THRESHOLD;
 }
 

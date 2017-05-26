@@ -117,13 +117,13 @@ int main() {
         int difference = error - last_error;
 
 
-        int total_error = (error * IR_Kp) + (difference * IR_kd);
+        int total_error = (error * IR_Kp) + (difference * IR_Kd);
         printf("Error: %d  Total error: %d \n", error, total_error);
         set_motors(total_error);
 
         // hug the right wall
         // check up against the wall
-        if (get_front_IR < MIN_FRONT_IR_DIST){
+        if (get_front_IR() < MIN_FRONT_IR_DIST){
             if (is_gap(RIGHT_IR_PIN)) {
                 turn_right();
             }
