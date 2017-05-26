@@ -29,3 +29,6 @@ const int BACK_TIME = 250000;
 const float Kp = 0.1; // constant of proportionality
 const float Ki = 0.05; // not so useful for avc
 const float Kd = 0.07;
+
+// IR
+const int MIN_FRONT_IR_DIST = 300;

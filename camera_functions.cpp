@@ -75,12 +75,18 @@ void normalise_camera_brightness() {
 }
 
 // return true if the center of the camera sees red
-// MATT IS DOING THIS
+// middle 160ish pix.
+
 bool is_on_red(){
-    return get_pixel( CAMERA_WIDTH/2, CAMERA_HEIGHT/2, 0) > RED_TOLERANCE;
+    int sum = 0;
+    for (int i = 80; i < CAMERA_WIDTH - 80; i++) {
+        sum += get_pixel(CAMERA_HEIGHT, i, 1);
+    }
+
+    return (sum/160) > RED_TOLERANCE;
 }
 
-// return true if at a + junction
+// return true if at a + junction (depreciated)
 bool is_over_line(int whitepixels) {
     return (whitepixels > CAMERA_WIDTH-30);
 }

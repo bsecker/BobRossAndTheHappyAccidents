@@ -18,8 +18,7 @@ int main() {
 
     // track completion of the line maze and block maze
     bool finished_line = false;
-    bool finished_line_maze = false;
-    bool finished_block_maze = false;
+    bool finished_maze = false;
 
  	   // Line follower loop. will run until finished line maze (including multipath maze)
 	   while (!finished_line) {
@@ -94,10 +93,19 @@ int main() {
                 turn_around();
             }
         }
+       // go to next loop if over red line.
+       if (is_on_red()) {
+           break;
+       }
 
 
         sleep1(0,1000); // 0.01 seconds delay - TODO do we need this?
 	}
+
+
+    while (finished_maze) {
+
+    }
 
     // cleanup
     stop_motors();
