@@ -110,6 +110,7 @@ int main() {
         take_picture();
         int left = read_IR(1);
         int right = read_IR(3);
+        printf("Ir Readings Left: %d  Right: %d\n", left, right);
 
         // calculate error
         int error = getIR_error(left, right);
@@ -117,6 +118,7 @@ int main() {
 
 
         int total_error = (error * IR_Kp) + (difference * IR_kd);
+        printf("Error: %d  Total error: %d \n", error, total_error);
         set_motors(total_error);
 
         // hug the right wall
