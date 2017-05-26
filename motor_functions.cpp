@@ -11,7 +11,7 @@ void stop_motors() {
 }
 
 // turn left until it reaches
-void turnleft(int times) {
+void turn_left(int times) {
     stop_motors();
     sleep1(0, 200000);
 
@@ -25,7 +25,7 @@ void turnleft(int times) {
     stop_motors();
 }
 
-void turnright() {
+void turn_right() {
     stop_motors();
     sleep1(0, 200000);
 
