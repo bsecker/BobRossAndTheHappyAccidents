@@ -5,35 +5,31 @@
 
 // turn left until it reaches
 void turnleft(int times) {
-    int speed = 50; // change these values
-    int duration = 1000000;
+    stop_motors();
+    sleep1(0, 200000);
 
-	// set left motor to -speed and right motor to speed
-	set_motor(1, -speed);
-	set_motor(2, speed);
+    // move backwards
+    set_motor(1, TURN_SPEED); // assuming it turns to the left, TODO
+    set_motor(2, TURN_SPEED);
 
-	// sleep for specified time
-	sleep1(0, duration);
+    sleep1(0, TURN_DURATION);
 
-	// stop motors
-	set_motor(1, 0);
-	set_motor(2, 0);
+    // stop again
+    stop_motors();
 }
 
 void turnright() {
-    int speed = 50; // change these values
-    int duration = 1000000;
+    stop_motors();
+    sleep1(0, 200000);
 
-    // set left motor to -speed and right motor to speed
-    set_motor(1, speed);
-    set_motor(2, -speed);
+    // move backwards
+    set_motor(1, -TURN_SPEED); // assuming it turns to the left, TODO
+    set_motor(2, -TURN_SPEED);
 
-    // sleep for specified time
-    sleep1(0, duration);
+    sleep1(0, TURN_DURATION);
 
-    // stop motors
-    set_motor(1, 0);
-    set_motor(2, 0);
+    // stop again
+    stop_motors();
 }
 
 void set_motors(int proportional_error) {
@@ -96,7 +92,6 @@ void go_back(bool direction){
 }
 
 void turn_around() {
-    stop_motors();
     stop_motors();
     sleep1(0, 200000);
 

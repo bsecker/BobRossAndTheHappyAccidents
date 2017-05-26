@@ -103,7 +103,37 @@ int main() {
 	}
 
 
-    while (finished_maze) {
+    int last_error = 0;
+
+    // do maze
+    while (!finished_maze) {
+        int left = read_IR(1);
+        int right = read_IR(3);
+
+        // calculate error
+        int error = getIR_error(left, right);
+        int difference = error - last_error;
+
+
+        int total_error = (error * IR_Kp) + (difference * IR_kd);
+        set_motors(total_error);
+
+        // hug the right wall
+        // check up against the wall
+        if (get_front_IR < MIN_FRONT_IR_DIST){
+            if (is_gap(RIGHT_IR_PIN)) {
+                turn_right();
+            }
+            else if (is_gap(LEFT_IR_PIN)) {
+                turn_left();
+            }
+        }
+
+
+
+        // finally, change last error to the current error
+        last_error = error;
+
 
     }
 

@@ -23,6 +23,8 @@ const int MOTOR_MAX = 250; // max motor speed
 const int MOTOR_MIN = -250; // min motor speed
 const int BACK_MOD = 2;
 const int BACK_TIME = 250000;
+const int TURN_DURATION = 333000;
+const int TURN_SPEED = 37;
 
 // PID
 // Guys we gotta play with this until its perfect! can't get much further without it!
