@@ -26,6 +26,7 @@ const int BACK_TIME = 250000;
 const int TURN_DURATION = 333000;
 const int TURN_SPEED = 37;
 
+
 // PID
 // Guys we gotta play with this until its perfect! can't get much further without it!
 const float Kp = 0.1; // constant of proportionality
@@ -36,6 +37,7 @@ const float Kd = 0.07;
 const int MIN_FRONT_IR_DIST = 300;
 const float IR_Kp = 0.1;
 const float IR_Kd = 0.1; // change these
+const int CLEARING_THRESHOLD = 300;
 
 // pins
 const int LEFT_IR_PIN = 1;
