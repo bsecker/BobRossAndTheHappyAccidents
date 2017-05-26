@@ -7,7 +7,7 @@
 #include "motor_functions.cpp"
 #include "constants.h"
 #include "network_functions.cpp"
-
+#include "IR_functions.cpp"
 
 // Main file for running Robot program.
 
@@ -108,8 +108,8 @@ int main() {
     // do maze
     while (!finished_maze) {
         take_picture();
-        int left = read_IR(1);
-        int right = read_IR(3);
+        int left = read_IR(LEFT_IR_PIN);
+        int right = read_IR(RIGHT_IR_PIN);
         printf("Ir Readings Left: %d  Right: %d\n", left, right);
 
         // calculate error

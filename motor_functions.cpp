@@ -3,6 +3,13 @@
 #include "E101.h"
 #include "constants.h"
 
+
+void stop_motors() {
+    set_motor(1, 0);
+    set_motor(2, 0);
+    printf("stopped motors!");
+}
+
 // turn left until it reaches
 void turnleft(int times) {
     stop_motors();
@@ -53,11 +60,6 @@ void set_motors(int proportional_error) {
 
 }
 
-void stop_motors() {
-    set_motor(1, 0);
-    set_motor(2, 0);
-    printf("stopped motors!");
-}
 
 
 // stop temporarily, 1 = right 0 = left
