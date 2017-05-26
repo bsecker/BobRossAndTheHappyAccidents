@@ -15,7 +15,7 @@ int read_IR(int pin) {
 	 sleep(0,500);
 	 read3 = read_analog(pin);
 	 average = ((read1+read2+read3)/3);
-  
+
 	return average;
 }
 
@@ -27,7 +27,7 @@ int getIR_error(int left_reading, int right_reading){
 
 // return distance to front of sensor
 int get_front_IR() {
-	return read_IR(2);
+	return read_IR(FRONT_IR_PIN);
 }
 
 // pause robot until door is cleared
@@ -39,4 +39,3 @@ void wait_until_door() {
 }
 
 //1 is left, 2 is middle and 3 is right}
-

@@ -1,4 +1,4 @@
-				
+
 // Constants for entire Robot
 // Please put constants in CAPS
 #pragma once
@@ -32,3 +32,10 @@ const float Kd = 0.07;
 
 // IR
 const int MIN_FRONT_IR_DIST = 300;
+const float IR_Kp = 0.1;
+const float IR_Kd = 0.1; // change these
+
+// pins
+const int LEFT_IR_PIN = 1;
+const int FRONT_IR_PIN = 2;
+const int RIGHT_IR_PIN = 3;
