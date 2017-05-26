@@ -80,7 +80,7 @@ void normalise_camera_brightness() {
 bool is_on_red(){
     int sum = 0;
     for (int i = 80; i < CAMERA_WIDTH - 80; i++) {
-        sum += get_pixel(CAMERA_HEIGHT, i, 1);
+        sum += get_pixel(CAMERA_HEIGHT/2, i, 0);
     }
 
     return (sum/160) > RED_TOLERANCE;
