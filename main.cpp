@@ -107,6 +107,7 @@ int main() {
 
     // do maze
     while (!finished_maze) {
+        take_picture();
         int left = read_IR(1);
         int right = read_IR(3);
 
@@ -127,13 +128,18 @@ int main() {
             else if (is_gap(LEFT_IR_PIN)) {
                 turn_left();
             }
+            else {
+                turn_around();
+            }
         }
 
-
+        // go to next loop if over red line.
+        if (is_on_red()) {
+            wait_until_door();
+        }
 
         // finally, change last error to the current error
         last_error = error;
-
 
     }
 
