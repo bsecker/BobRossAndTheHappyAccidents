@@ -110,7 +110,7 @@ int main() {
         take_picture();
         int left = read_IR(LEFT_IR_PIN);
         int right = read_IR(RIGHT_IR_PIN);
-        printf("Ir Readings Left: %d  Right: %d\n", left, right);
+        printf("\n Ir Readings Left: %d  Right: %d Front: %d \n", left, right, get_front_IR());
 
         // calculate error
         int error = getIR_error(left, right);
@@ -123,7 +123,7 @@ int main() {
 
         // hug the right wall
         // check up against the wall
-        if (get_front_IR() < MIN_FRONT_IR_DIST){
+        if (get_front_IR() > MIN_FRONT_IR_DIST){
             if (is_gap(RIGHT_IR_PIN)) {
                 turn_right();
             }
