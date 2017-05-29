@@ -7,9 +7,9 @@
 // Camera
 const int CAMERA_WIDTH = 320;
 const int CAMERA_HEIGHT = 240;
-const int WHITE_TOLERANCE = 115;
+const int WHITE_TOLERANCE = 100;
 const int RED_TOLERANCE = 200;
-const int SIDE_LINE_TOLERANCE = 30;
+const int SIDE_LINE_TOLERANCE = 25;
 
 // Network
 char SERVER_ADDRESS[] = "130.128.150.128"; //this and password couldnt be constants could just use local variables in network_functions file
@@ -22,9 +22,9 @@ const int BACK_SPEED = 35;
 const int MOTOR_MAX = 250; // max motor speed
 const int MOTOR_MIN = -250; // min motor speed
 const int BACK_MOD = 0.5;
-const int BACK_TIME = 250000;
-const int TURN_DURATION = 500000;
-const int TURN_SPEED = 35;
+const int BACK_TIME = 500000;
+const int TURN_DURATION = 700000;
+const int TURN_SPEED = 50;
 
 
 // PID

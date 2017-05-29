@@ -78,12 +78,16 @@ void normalise_camera_brightness() {
 // middle 160ish pix.
 
 bool is_on_red(){
-    int sum = 0;
+    int redsum = 0;
+    int bluesum = 0;
+    int greensum = 0;
     for (int i = 80; i < CAMERA_WIDTH - 80; i++) {
-        sum += get_pixel(CAMERA_HEIGHT/2, i, 0);
+        redsum += get_pixel(CAMERA_HEIGHT/2, i, 0);
+        greensum += get_pixel(CAMERA_HEIGHT/2, i, 1);
+        bluesum += get_pixel(CAMERA_HEIGHT/2, i, 2);
     }
-
-    return (sum/160) > RED_TOLERANCE;
+	printf("%d %d %d", redsum/160, greensum/160, bluesum/160);
+    return ((redsum/160) > RED_TOLERANCE && (greensum/160) < 100 && (bluesum/160) < 100);
 }
 
 // return true if at a + junction (depreciated)

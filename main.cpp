@@ -22,7 +22,7 @@ int main() {
 
  	   // Line follower loop. will run until finished line maze (including multipath maze)
 	   while (!finished_line) {
-
+//		display_picture(0,500000);
 	      printf("\n\n");
         int cameraLine1White[CAMERA_WIDTH];
         int cameraLine2White[CAMERA_WIDTH]; // slightly above line 1
@@ -77,7 +77,7 @@ int main() {
 //	printf("Left: %d, Right: %d \n", line_left, line_right);
         // set motors if we have white pixels.
         //TODO this stopped working when we added whitePixels2 trying without.
-        if (whitePixels1 > 0 ) {
+        if (whitePixels1 > 10 ) {
 	       // printf("Whitepixels: %d \n ", whitePixels1);
            // printf("Error: Kp = %f Kd = %f Total = %f \n", (error1 * Kp), (difference * Kd), (error1 * Kp) + (difference * Kd));
             set_motors((error1 * Kp) + (difference * Kd));

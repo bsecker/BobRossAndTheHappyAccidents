@@ -10,34 +10,9 @@ void stop_motors() {
     printf("stopped motors!");
 }
 
-// turn left until it reaches
-void turn_left() {
-    stop_motors();
-    sleep1(0, 200000);
 
-    // move backwards
-    set_motor(1, TURN_SPEED); // assuming it turns to the left, TODO
-    set_motor(2, TURN_SPEED);
 
-    sleep1(0, TURN_DURATION);
 
-    // stop again
-    stop_motors();
-}
-
-void turn_right() {
-    stop_motors();
-    sleep1(0, 200000);
-
-    // move backwards
-    set_motor(1, -TURN_SPEED); // assuming it turns to the left, TODO
-    set_motor(2, -TURN_SPEED);
-
-    sleep1(0, TURN_DURATION);
-
-    // stop again
-    stop_motors();
-}
 
 void set_motors(int proportional_error) {
     int motor_1 = (int)((double)MOTOR_SPEED+proportional_error);
@@ -106,4 +81,42 @@ void turn_around() {
 
     // stop again
     //stop_motors();
+}
+
+void turn_right() {
+    stop_motors();
+    sleep1(0, 200000);
+
+    // move backwards
+    set_motor(1, -TURN_SPEED); // assuming it turns to the left, TODO
+    set_motor(2, -TURN_SPEED);
+
+    sleep1(0, TURN_DURATION);
+
+    // stop again
+    stop_motors();
+
+    //go forward for a little while
+    set_motors(0);
+    sleep1(0, 200000);
+
+}
+
+// turn left for a while
+void turn_left() {
+    stop_motors();
+    sleep1(0, 200000);
+
+    // move backwards
+    set_motor(1, TURN_SPEED); // assuming it turns to the left, TODO
+    set_motor(2, TURN_SPEED);
+
+    sleep1(0, TURN_DURATION);
+
+    // stop again
+    stop_motors();
+
+    //go forward for a little while
+    set_motors(0);
+    sleep1(0, 200000);
 }
