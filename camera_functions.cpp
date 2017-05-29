@@ -86,7 +86,7 @@ bool is_on_red(){
         greensum += get_pixel(CAMERA_HEIGHT/2, i, 1);
         bluesum += get_pixel(CAMERA_HEIGHT/2, i, 2);
     }
-	printf("%d %d %d", redsum/160, greensum/160, bluesum/160);
+	//printf("%d %d %d", redsum/160, greensum/160, bluesum/160);
     return ((redsum/160) > RED_TOLERANCE && (greensum/160) < 100 && (bluesum/160) < 100);
 }
 

@@ -88,8 +88,8 @@ void turn_right() {
     sleep1(0, 200000);
 
     // move backwards
-    set_motor(1, -TURN_SPEED); // assuming it turns to the left, TODO
-    set_motor(2, -TURN_SPEED);
+    set_motor(1, TURN_SPEED); // assuming it turns to the left, TODO
+    set_motor(2, TURN_SPEED);
 
     sleep1(0, TURN_DURATION);
 
@@ -108,8 +108,8 @@ void turn_left() {
     sleep1(0, 200000);
 
     // move backwards
-    set_motor(1, TURN_SPEED); // assuming it turns to the left, TODO
-    set_motor(2, TURN_SPEED);
+    set_motor(1, -TURN_SPEED); // assuming it turns to the left, TODO
+    set_motor(2, -TURN_SPEED);
 
     sleep1(0, TURN_DURATION);
 

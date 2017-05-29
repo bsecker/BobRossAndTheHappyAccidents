@@ -23,8 +23,8 @@ const int MOTOR_MAX = 250; // max motor speed
 const int MOTOR_MIN = -250; // min motor speed
 const int BACK_MOD = 0.5;
 const int BACK_TIME = 500000;
-const int TURN_DURATION = 700000;
-const int TURN_SPEED = 45;
+const int TURN_DURATION = 500000;
+const int TURN_SPEED = 35;
 
 
 // PID
@@ -35,7 +35,7 @@ const float Kd = 0.08;
 
 // IR
 const int MIN_FRONT_IR_DIST = 600;
-const float IR_Kp = 0.02;
+const float IR_Kp = 0.05;
 const float IR_Kd = 0.01; // change these
 const int CLEARING_THRESHOLD = 400;
 
