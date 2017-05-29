@@ -49,7 +49,11 @@ int main() {
                error2 += (_i - (CAMERA_WIDTH/2));
                whitePixels2++;
            }
+	   if (_i % 5 == 0){
+	       printf("%d", cameraLine1White[_i]);
+	   }
        }
+	printf("\n");
 
        // change the error variable to the average error
        if (whitePixels1 > 0) {
@@ -62,7 +66,7 @@ int main() {
 
         // calculate derivative - difference in errors
         float difference = error2 - error1; //TODO should be absolute? do we care about sign
-        printf("line difference: %f \n ", difference);
+       // printf("line difference: %f \n ", difference);
 
         // track if there is a line left or right of the current line.
 
@@ -72,9 +76,10 @@ int main() {
 
 //	printf("Left: %d, Right: %d \n", line_left, line_right);
         // set motors if we have white pixels.
-        if (whitePixels1 > 0 && whitePixels2 > 0) {
-	        printf("Whitepixels: %d \n ", whitePixels1);
-            printf("Error: Kp = %f Kd = %f Total = %f \n", (error1 * Kp), (difference * Kd), (error1 * Kp) + (difference * Kd));
+        //TODO this stopped working when we added whitePixels2 trying without.
+        if (whitePixels1 > 0 ) {
+	       // printf("Whitepixels: %d \n ", whitePixels1);
+           // printf("Error: Kp = %f Kd = %f Total = %f \n", (error1 * Kp), (difference * Kd), (error1 * Kp) + (difference * Kd));
             set_motors((error1 * Kp) + (difference * Kd));
         }
         // if no white pixels, go back and search for it!
@@ -99,7 +104,7 @@ int main() {
        }
 
 
-        sleep1(0,1000); // 0.01 seconds delay - TODO do we need this?
+        //sleep1(0,1000);  0.01 seconds delay - TODO do we need this?
 	}
 
 
@@ -110,7 +115,7 @@ int main() {
         take_picture();
         int left = read_IR(LEFT_IR_PIN);
         int right = read_IR(RIGHT_IR_PIN);
-        printf("\n Ir Readings Left: %d  Right: %d Front: %d \n", left, right, get_front_IR());
+       // printf("\n Ir Readings Left: %d  Right: %d Front: %d \n", left, right, get_front_IR());
 
         // calculate error
         int error = getIR_error(left, right);
@@ -118,20 +123,23 @@ int main() {
 
 
         int total_error = (error * IR_Kp) + (difference * IR_Kd);
-        printf("Error: %d  Total error: %d \n", error, total_error);
+        printf("Error: %d difference: %d Total error: %d \n", error, total_error, difference);
         set_motors(total_error);
 
         // hug the right wall
         // check up against the wall
         if (get_front_IR() > MIN_FRONT_IR_DIST){
             if (is_gap(RIGHT_IR_PIN)) {
-                turn_right();
+                turn_right();;
+                printf("Right Turn\n");
             }
             else if (is_gap(LEFT_IR_PIN)) {
                 turn_left();
+                printf("Left Turn\n");
             }
             else {
                 turn_around();
+                printf("turn Around\n");
             }
         }
 

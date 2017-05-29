@@ -50,8 +50,8 @@ void set_motors(int proportional_error) {
     if (motor_2 < MOTOR_MIN) motor_2=MOTOR_MIN;
 
     // print out values (debugging)
-    printf("Motor 1 speed: %d \n", motor_1);
-    printf("Motor 2 speed: %d \n", motor_2);
+    //printf("Motor 1 speed: %d \n", motor_1);
+    //printf("Motor 2 speed: %d \n", motor_2);
 
     // set motors
     set_motor(1, motor_1);
@@ -98,11 +98,12 @@ void turn_around() {
     sleep1(0, 200000);
 
     // move backwards
-    set_motor(1, BACK_SPEED);
-    set_motor(2, BACK_SPEED);
+
+    set_motor(1,-BACK_SPEED);
+    set_motor(2,-BACK_SPEED);
 
     sleep1(0, 500000);
 
     // stop again
-    stop_motors();
+    //stop_motors();
 }

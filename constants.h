@@ -17,26 +17,26 @@ const int SERVER_PORT = 1024;
 char SERVER_PASSWORD[24] = "Please";
 
 // Robot
-const int MOTOR_SPEED = 37;
-const int BACK_SPEED = 37;
+const int MOTOR_SPEED = 35;
+const int BACK_SPEED = 35;
 const int MOTOR_MAX = 250; // max motor speed
 const int MOTOR_MIN = -250; // min motor speed
 const int BACK_MOD = 0.5;
 const int BACK_TIME = 250000;
-const int TURN_DURATION = 333000;
-const int TURN_SPEED = 37;
+const int TURN_DURATION = 500000;
+const int TURN_SPEED = 35;
 
 
 // PID
 // Guys we gotta play with this until its perfect! can't get much further without it!
 const float Kp = 0.1; // constant of proportionality
 const float Ki = 0.05; // not so useful for avc
-const float Kd = 0.07;
+const float Kd = 0.08;
 
 // IR
-const int MIN_FRONT_IR_DIST = 300;
-const float IR_Kp = 0.1;
-const float IR_Kd = 0.1; // change these
+const int MIN_FRONT_IR_DIST = 500;
+const float IR_Kp = 0.02;
+const float IR_Kd = 0.01; // change these
 const int CLEARING_THRESHOLD = 300;
 
 // pins
