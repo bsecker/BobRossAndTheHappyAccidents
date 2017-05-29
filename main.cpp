@@ -130,12 +130,12 @@ int main() {
         // check up against the wall
         if (get_front_IR() > MIN_FRONT_IR_DIST){
             if (is_gap(RIGHT_IR_PIN)) {
-                turn_right();;
+                turn_right(); //TODO seeing if it is turning the wrong direction
                 printf("Right Turn\n");
             }
             else if (is_gap(LEFT_IR_PIN)) {
-                turn_left();
-                printf("Left Turn\n");
+                turn_left(); //TODO seeing if it is turning the wrong direction
+                printf("Left Turn\n"); 
             }
             else {
                 turn_around();

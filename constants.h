@@ -24,7 +24,7 @@ const int MOTOR_MIN = -250; // min motor speed
 const int BACK_MOD = 0.5;
 const int BACK_TIME = 500000;
 const int TURN_DURATION = 700000;
-const int TURN_SPEED = 50;
+const int TURN_SPEED = 45;
 
 
 // PID
@@ -34,10 +34,10 @@ const float Ki = 0.05; // not so useful for avc
 const float Kd = 0.08;
 
 // IR
-const int MIN_FRONT_IR_DIST = 500;
+const int MIN_FRONT_IR_DIST = 600;
 const float IR_Kp = 0.02;
 const float IR_Kd = 0.01; // change these
-const int CLEARING_THRESHOLD = 300;
+const int CLEARING_THRESHOLD = 400;
 
 // pins
 const int LEFT_IR_PIN = 1;
