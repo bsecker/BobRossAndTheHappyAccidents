@@ -121,27 +121,36 @@ int main() {
         int error = getIR_error(left, right);
         int difference = error - last_error;
 
-
         int total_error = (error * IR_Kp) + (difference * IR_Kd);
-        printf("Error: %d difference: %d Total error: %d \n", error, total_error, difference);
-        set_motors(total_error);
+        printf("Error: %d difference: %d Total error: %d \n", error, difference, total_error);
 
         // hug the right wall
         // check up against the wall
-        if (get_front_IR() > MIN_FRONT_IR_DIST){
             if (is_gap(RIGHT_IR_PIN)) {
-                turn_right(); //TODO seeing if it is turning the wrong direction
-                printf("Right Turn\n");
-            }
-            else if (is_gap(LEFT_IR_PIN)) {
-                turn_left(); //TODO seeing if it is turning the wrong direction
-                printf("Left Turn\n"); 
+                 if (get_front_IR() > MIN_FRONT_IR_DIST){
+                    turn_right(); //TODO seeing if it is turning the wrong direction
+                }
+                else {
+                    set_motors(0);
+                 }
+           }
+           else if (is_gap(LEFT_IR_PIN)) {
+                if (get_front_IR() > MIN_FRONT_IR_DIST){
+                    turn_left(); //TODO seeing if it is turning the wrong direction
+                }
+                else {
+                    set_motors(0);
+                }
             }
             else {
-                turn_around();
-                printf("turn Around\n");
+                if (get_front_IR() > MIN_FRONT_IR_DIST){ 
+                    turn_around();
+                }
+                else {
+                  printf("setting motors with error: %d" , total_error); 
+                  set_motors(total_error);       
+                }
             }
-        }
 
         // go to next loop if over red line.
         if (is_on_red()) {
