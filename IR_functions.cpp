@@ -26,7 +26,7 @@ bool is_gap(int pin){
 
 // get error from side IR sensors
 int getIR_error(int left_reading, int right_reading){
-	int IR_error=((1024-right_reading)-(1024-left_reading));
+	int IR_error=left_reading-right_reading;
 	return IR_error;
 }
 

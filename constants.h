@@ -35,8 +35,8 @@ const float Kd = 0.08;
 
 // IR
 const int MIN_FRONT_IR_DIST = 600;
-const float IR_Kp = 0.05;
-const float IR_Kd = 0.01; // change these
+const float IR_Kp = 0.01;
+const float IR_Kd = 0.000; // change these
 const int CLEARING_THRESHOLD = 400;
 
 // pins
